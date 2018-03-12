@@ -46,12 +46,20 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-  res.render('about.hbs', {pageTitle: 'About Page'});
+  res.render('about.hbs', {
+    pageTitle: 'About Page'
+  });
 });
 
-
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page'
+  });
+})
 app.get('/bad', (req, res) => {
-  res.send({errorMessage: 'Unable to handle request'});
+  res.send({
+    errorMessage: 'Unable to handle request'
+  });
 });
 
 app.listen(port, () => {
